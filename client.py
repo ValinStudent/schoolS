@@ -155,7 +155,7 @@ class client:
             print("Invalid number")
         pass
         
-    # Main logic of the clien, start the client application
+    # Main logic of the client, start the client application
     def start(self):
         opt=0
         while opt!=3:

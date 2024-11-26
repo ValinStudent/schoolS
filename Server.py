@@ -35,8 +35,9 @@ class server(threading.Thread):
 
     # Function to send a file to client       
     def receiveFile(self,uploadSocket,fileName):
-        
-        with open(self.path+"/"+fileName, 'xwb') as f:
+        if not os.path.exists(self.path+"/"+fileName):
+            open(self.path+"/"+fileName, 'x').close()
+        with open(self.path+"/"+fileName, 'wb') as f:
             print ('file opened')
             while True:
                 #print('receiving data...')
